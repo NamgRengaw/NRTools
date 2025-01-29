@@ -1,5 +1,5 @@
 <script setup>
-  // import { QHeader, QToolbar, QToolbarTitle, QBtn, QIcon } from 'quasar';
+  import { QHeader, QToolbar, QToolbarTitle, QBtn, QIcon } from 'quasar';
 </script>
 
 <template>

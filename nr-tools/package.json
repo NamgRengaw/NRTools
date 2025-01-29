@@ -12,6 +12,7 @@
     "@quasar/extras": "^1.16.16",
     "@tailwindcss/vite": "^4.0.0",
     "pinia": "^2.3.1",
+    "quasar": "^2.17.7",
     "tailwindcss": "^4.0.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
