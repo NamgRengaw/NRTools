@@ -1,9 +1,10 @@
-export default {
-    theme: {
-      extend: {
-        fontFamily: {
-            montserrat: ['montserrat', 'sans-serif'],
-        },
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
       },
     },
-  };
+  },
+  plugins: [],
+}

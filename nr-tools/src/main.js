@@ -1,8 +1,9 @@
 import './assets/main.css'
 
+import { Quasar } from 'quasar'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Quasar } from 'quasar'
+import { i18n, loadLocaleMessages } from '@/plugins/i18n'
 
 import '@quasar/extras/material-icons/material-icons.css'
 import '@quasar/extras/material-icons-outlined/material-icons-outlined.css'
@@ -17,5 +18,8 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(Quasar, {plugins: {},})
+app.use(i18n)
 
-app.mount('#app')
+loadLocaleMessages(i18n.global.locale).then(() => {
+    app.mount('#app')
+})
