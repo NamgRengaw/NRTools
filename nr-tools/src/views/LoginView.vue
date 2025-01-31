@@ -118,7 +118,7 @@ function authenticate() {
         data.value.token = data.value.password;
         store.login(data.value);
         router.push('/');
-        alert.addAlert({ message: t('alerts.success'), type: "success" });
+        // alert.addAlert({ message: t('alerts.success'), type: "success" });
     }
 }
 
