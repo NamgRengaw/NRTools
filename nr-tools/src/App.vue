@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <header>
     <div class="wrapper">
@@ -11,10 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
   </header>
-
+  <Alert />
   <RouterView />
 </template>
 
-<style scoped>
-
-</style>
+<script setup>
+  import Alert from "@/components/alerts/Alert.vue";
+  import { RouterLink, RouterView } from 'vue-router'
+</script>
