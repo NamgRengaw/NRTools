@@ -21,6 +21,21 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('@/views/LoginView.vue'),
+    },
+    {
+      path: '/password-recovery',
+      name: 'password-recovery',
+      component: () => import('@/views/PasswordRecoveryView.vue'),
+    },
+    {
+      path: '/suport',
+      name: 'suport',
+      component: () => import('@/views/SuportView.vue'),
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('@/views/RegisterView.vue'),
     }
   ],
 })
