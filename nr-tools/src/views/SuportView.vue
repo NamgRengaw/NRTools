@@ -4,46 +4,9 @@
             <div class="flex justify-center items-center mb-12">
                 <Typography tKey="label.suport" class="text-5xl text-blue-800 font-bold subpixel-antialiased"/>
             </div>
-            <q-input 
-                ref="nameInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.user"
-                lazy-rules="ondemand"
-                :rules="nameRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.name"/>
-                </template>
-            </q-input>
-            <q-input 
-                ref="phoneInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.tel"
-                lazy-rules="ondemand"
-                :rules="phoneRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.phone"/>
-                </template>
-            </q-input>
-            <q-input 
-                ref="complainInput"
-                type="textarea"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.complain"
-                lazy-rules="ondemand"
-                :rules="complainRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.description"/>
-                </template>
-            </q-input>
+            <InputField ref="nameInput" v-model="data.user" input-class="mx-5 mb-2" :rules="nameRules" label="label.name"/>
+            <InputField ref="phoneInput" v-model="data.phone" input-class="mx-5 mb-2" :rules="phoneRules" label="label.phone"/>
+            <InputField ref="complainInput" v-model="data.complain" input-class="mx-5 mb-2" type="textarea" :rules="complainRules" label="label.description"/>
             <div class="flex justify-around items-center">
                 <q-btn
                     no-caps
@@ -73,6 +36,7 @@ import { QInput, QBtn } from 'quasar';
 import { useRouter } from 'vue-router';
 import { useAlertStore } from "@/stores/alerts";
 import Typography from '@/ui/text/Typography.vue';
+import InputField from '@/ui/fields/InputField.vue';
 
 const { t } = useI18n();
 const router = useRouter();

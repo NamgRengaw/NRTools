@@ -4,81 +4,19 @@
             <div class="flex justify-center items-center mb-12">
                 <Typography tKey="label.register" class="text-5xl text-blue-800 font-bold subpixel-antialiased"/>
             </div>
-            <q-input 
-                ref="nameInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.user"
-                lazy-rules="ondemand"
-                :rules="nameRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.name"/>
+            <InputField ref="nameInput" v-model="data.user" input-class="mx-5 mb-2" :rules="nameRules" label="label.name"/>
+            <InputField ref="phoneInput" v-model="data.phone" input-class="mx-5 mb-2" :rules="phoneRules" label="label.phone"/>
+            <InputField ref="emailInput" v-model="data.email" input-class="mx-5 mb-2" :rules="emailRules" label="label.email"/>
+            <InputField ref="passwordInput" v-model="data.password" input-class="mx-5 mb-2" :type="passwordType" :rules="passwordRules" label="label.password">
+                <template v-slot:append>
+                    <q-icon :name="passwordIcon" @click="togglePasswordFieldState" class="cursor-pointer" />
                 </template>
-            </q-input>
-            <q-input 
-                ref="phoneInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.phone"
-                lazy-rules="ondemand"
-                :rules="phoneRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.phone"/>
-                </template>
-            </q-input>
-            <q-input 
-                ref="emailInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.email"
-                lazy-rules="ondemand"
-                :rules="emailRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.email"/>
-                </template>
-            </q-input>
-            <q-input 
-                ref="passwordInput"
-                outlined 
-                label-slot 
-                append-slot
-                class="mx-5 mb-2" 
-                :type="passwordType" 
-                v-model="data.password" 
-                lazy-rules="ondemand"
-                :rules="passwordRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.password"/>
-                </template>
+            </InputField>
+            <InputField ref="confirmPasswordInput" v-model="data.confirmPassword" input-class="mx-5 mb-2" :type="passwordType" :rules="passwordConfirmRules" label="label.password_confirmation">
                 <template v-slot:append>
                     <q-icon :name="passwordIcon" @click="togglePasswordFieldState" class="cursor-pointer" />                    
                 </template>
-            </q-input>
-            <q-input 
-                ref="confirmPasswordInput"
-                outlined 
-                label-slot 
-                append-slot
-                class="mx-5 mb-2" 
-                :type="passwordType" 
-                v-model="data.confirmPassword" 
-                lazy-rules="ondemand"
-                :rules="passwordConfirmRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.password_confirmation"/>
-                </template>
-                <template v-slot:append>
-                    <q-icon :name="passwordIcon" @click="togglePasswordFieldState" class="cursor-pointer" />                    
-                </template>
-            </q-input>
+            </InputField>
             <div class="flex justify-around items-center">
                 <q-btn
                     no-caps
@@ -108,6 +46,7 @@ import { QInput, QBtn } from 'quasar';
 import { useRouter } from 'vue-router';
 import { useAlertStore } from "@/stores/alerts";
 import Typography from '@/ui/text/Typography.vue';
+import InputField from '@/ui/fields/InputField.vue';
 
 const { t } = useI18n();
 const router = useRouter();

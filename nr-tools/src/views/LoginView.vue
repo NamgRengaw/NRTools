@@ -4,37 +4,12 @@
             <div class="flex justify-center items-center mb-12">
                 <Typography tKey="label.login" class="text-5xl text-blue-800 font-bold subpixel-antialiased"/>
             </div>
-            <q-input 
-                ref="emailInput"
-                outlined 
-                label-slot
-                class="mx-5 mb-2" 
-                v-model="data.user"
-                lazy-rules="ondemand"
-                :rules="emailRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.email"/>
-                </template>
-            </q-input>
-            <q-input 
-                ref="passwordInput"
-                outlined 
-                label-slot 
-                append-slot
-                class="mx-5 mb-2" 
-                :type="passwordType" 
-                v-model="data.password" 
-                lazy-rules="ondemand"
-                :rules="passwordRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.password"/>
-                </template>
+            <InputField ref="emailInput" v-model="data.user" input-class="mx-5 mb-2" :rules="emailRules" label="label.email"/>
+            <InputField  ref="passwordInput" v-model="data.password" input-class="mx-5 mb-2" :type="passwordType" :rules="passwordRules" label="label.password">
                 <template v-slot:append>
                     <q-icon :name="passwordIcon" @click="togglePasswordFieldState" class="cursor-pointer" />                    
                 </template>
-            </q-input>
+            </InputField>
             <div class="flex justify-center items-center">
                 <q-btn
                     no-caps
@@ -60,6 +35,7 @@ import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 import { useAlertStore } from "@/stores/alerts";
 import Typography from '@/ui/text/Typography.vue';
+import InputField from '@/ui/fields/InputField.vue';
 
 const { t } = useI18n();
 const router = useRouter();

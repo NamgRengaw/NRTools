@@ -1,7 +1,6 @@
 <template>
-     <header class="bg-blue-800 text-white shadow-md">
+    <header class="bg-blue-800 text-white shadow-md">
     <div class="max-w-screen-xl mx-auto flex justify-between items-center p-4">
-      <!-- Logo -->
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="NamgRengaw Logo" />
         <span class="text-2xl font-semibold">NamgRengaw</span>

@@ -4,19 +4,7 @@
             <div class="flex justify-center items-center mb-12">
                 <Typography tKey="auth.password_recovery" class="text-5xl text-blue-800 font-bold subpixel-antialiased"/>
             </div>
-            <q-input 
-                ref="emailInput"
-                outlined 
-                label-slot
-                class="m-5" 
-                v-model="data.user"
-                lazy-rules="ondemand"
-                :rules="emailRules"
-                >
-                <template v-slot:label>
-                    <Typography tKey="label.email"/>
-                </template>
-            </q-input>
+            <InputField ref="emailInput" v-model="data.user" input-class="mx-5 mb-2" :rules="emailRules" label="label.email"/>
             <div class="flex justify-around items-center">
                 <q-btn
                     no-caps
@@ -32,8 +20,8 @@
                 </q-btn>
             </div>
             <div class="flex flex-col justify-center items-center">
-                <Typography tKey="auth.cant_access_account_question" @click="goToRegisterPage" class="mt-12 mb-2 text-md text-blue-600 cursor-pointer hover:text-blue-800 text-bold"/>
-                <Typography tKey="auth.register_question" @click="goToSuportPage" class="text-md text-blue-600 cursor-pointer hover:text-blue-800 text-bold"/>
+                <Typography tKey="auth.cant_access_account_question" @click="goToSuportPage" class="mt-12 mb-2 text-md text-blue-600 cursor-pointer hover:text-blue-800 text-bold"/>
+                <Typography tKey="auth.register_question" @click="goToRegisterPage" class="text-md text-blue-600 cursor-pointer hover:text-blue-800 text-bold"/>
             </div>
         </div>
     </div>
@@ -46,6 +34,7 @@ import { QInput, QBtn } from 'quasar';
 import { useRouter } from 'vue-router';
 import { useAlertStore } from "@/stores/alerts";
 import Typography from '@/ui/text/Typography.vue';
+import InputField from '@/ui/fields/InputField.vue';
 
 const { t } = useI18n();
 const router = useRouter();
