@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-svh flex flex-col bg-gray-100">
+  <div class="min-h-svh flex flex-col bg-white">
     <NavBar />
     <section class="flex-1 bg-white text-blue-900 flex flex-col items-center justify-center pt-6 px-6 text-center">
       <Typography tag="div" class="text-4xl mb-5" t-key="label.word_positions_converter"/>
